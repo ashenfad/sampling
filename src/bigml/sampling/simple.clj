@@ -54,7 +54,7 @@
       [prev-total result candidate-item]
       [new-total (cons candidate-item result) item])))
 
-(defn- pop-item [weigh {:keys [total children items]} roll]
+(defn- pop-item [weigh {:keys [children items]} roll]
   (if children
     (let [[new-total new-children item]
           (reduce (partial process-parent roll weigh) [0] children)]

@@ -14,12 +14,6 @@
 (def ^:private compare-k
   #(compare (:k %1) (:k %2)))
 
-(defn- calc-r [rnd & [floor]]
-  (let [r (random/next-double! rnd)]
-    (if floor
-      (+ floor (* r (- 1 floor)))
-      r)))
-
 (defn- calc-k [item r weigh]
   (if weigh
     (let [w (weigh item)]

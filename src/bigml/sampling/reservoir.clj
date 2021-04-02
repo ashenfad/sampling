@@ -31,7 +31,7 @@
                       are :efraimdis or :insertion.  :insertion may be
                       faster for small populations, but the default
                       is :efraimdis."
-  [size & {:keys [weigh implementation] :as opts
+  [size & {:keys [implementation] :as opts
            :or {implementation :efraimdis}}]
   (if-let [create-impl (implementations implementation)]
     (apply create-impl size (flatten (seq opts)))

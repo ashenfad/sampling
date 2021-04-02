@@ -42,7 +42,7 @@
        :generator generator})))
 
 (defmethod insert ::without-replacement [reservoir val]
-  (let [{:keys [size insert-count seed generator indices]}
+  (let [{:keys [size insert-count seed generator]}
         (meta reservoir)
         insert-count (inc insert-count)
         rnd (random/create :seed seed :generator generator)
